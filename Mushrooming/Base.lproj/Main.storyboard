@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,14 +22,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Y0Q-SZ-2ng">
-                                <rect key="frame" x="0.0" y="20" width="320" height="441"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Y0Q-SZ-2ng">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mq0-Tc-DZI">
-                                <rect key="frame" x="16" y="478" width="288" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mq0-Tc-DZI">
+                                <rect key="frame" x="16" y="520" width="288" height="40"/>
                                 <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="0.357421875" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="9Di-qq-qyh"/>
+                                </constraints>
                                 <state key="normal" title="PUNKT STARTOWY">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -38,6 +40,15 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Y0Q-SZ-2ng" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="7Ff-Rm-OpW"/>
+                            <constraint firstItem="mq0-Tc-DZI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="7va-Zx-xgh"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="mq0-Tc-DZI" secondAttribute="bottom" constant="8" id="JI4-mg-7M3"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Y0Q-SZ-2ng" secondAttribute="bottom" id="cnx-zP-Tf5"/>
+                            <constraint firstAttribute="trailing" secondItem="Y0Q-SZ-2ng" secondAttribute="trailing" id="fGD-JK-8Se"/>
+                            <constraint firstItem="mq0-Tc-DZI" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="yau-3Q-jpd"/>
+                            <constraint firstItem="Y0Q-SZ-2ng" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="zbt-pg-rbg"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="mapView" destination="Y0Q-SZ-2ng" id="hd1-Ja-iO2"/>

@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class ViewController: UIViewController, CLLocationManagerDelegate {
+class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var startPointButton: UIButton!
@@ -27,19 +27,28 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         startPointButton.layer.cornerRadius = 6.0
         mapView.layer.cornerRadius = 6.0
+        
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyBest
-        manager.requestWhenInUseAuthorization()
-        manager.startUpdatingLocation()
         
         self.mapView.showsUserLocation = true
+        self.mapView.mapType = MKMapType(rawValue: 0)!
+        
+        manager.requestWhenInUseAuthorization()
+        manager.startUpdatingLocation()
+        manager.startUpdatingHeading()
+        
         self.mapView.isZoomEnabled = true
+        self.mapView.userTrackingMode = MKUserTrackingMode(rawValue: 2)!
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        let lineRender = MKPolylineRenderer(overlay: overlay)
+        lineRender.strokeColor = UIColor.blue
+        lineRender.lineWidth = 3
+        return lineRender
     }
-
+  
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         location = locations.first!
         let span: MKCoordinateSpan = MKCoordinateSpanMake(0.01,0.01)
@@ -54,7 +63,5 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         myStartPoint.title = "Punkt startowy"
         mapView.addAnnotation(myStartPoint)
     }
-    
-    
 }
 
