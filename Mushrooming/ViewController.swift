@@ -25,10 +25,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let buttonCornerRadius = 6.0
-        let mapViewCornerRadius = 6.0
-        startPointButton.layer.cornerRadius = CGFloat(buttonCornerRadius)
-        mapView.layer.cornerRadius = CGFloat(mapViewCornerRadius)
+        locationManagerConfiguration()
+        mapViewConfiguration()
     }
     
     func locationManagerConfiguration() {

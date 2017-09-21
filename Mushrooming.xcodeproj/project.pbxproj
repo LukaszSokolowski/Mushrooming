@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		21609E781F7130CC00117103 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21609E771F7130CC00117103 /* MapKit.framework */; };
 		21609E7A1F71310000117103 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21609E791F71310000117103 /* CoreLocation.framework */; };
+		219E70731F74199C0027BD5A /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219E70721F74199C0027BD5A /* UIViewExtension.swift */; };
 		21D0D47A1F6E96E200EC463A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D0D4791F6E96E200EC463A /* AppDelegate.swift */; };
 		21D0D47C1F6E96E200EC463A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D0D47B1F6E96E200EC463A /* ViewController.swift */; };
 		21D0D47F1F6E96E200EC463A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21D0D47D1F6E96E200EC463A /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 /* Begin PBXFileReference section */
 		21609E771F7130CC00117103 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		21609E791F71310000117103 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		219E70721F74199C0027BD5A /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		21D0D4761F6E96E200EC463A /* Mushrooming.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mushrooming.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21D0D4791F6E96E200EC463A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21D0D47B1F6E96E200EC463A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				21D0D4801F6E96E200EC463A /* Assets.xcassets */,
 				21D0D4821F6E96E200EC463A /* LaunchScreen.storyboard */,
 				21D0D4851F6E96E200EC463A /* Info.plist */,
+				219E70721F74199C0027BD5A /* UIViewExtension.swift */,
 			);
 			path = Mushrooming;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				219E70731F74199C0027BD5A /* UIViewExtension.swift in Sources */,
 				21D0D47C1F6E96E200EC463A /* ViewController.swift in Sources */,
 				21D0D47A1F6E96E200EC463A /* AppDelegate.swift in Sources */,
 			);
