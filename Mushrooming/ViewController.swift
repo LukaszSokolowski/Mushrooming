@@ -15,7 +15,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var startPointButton: UIButton!
     
-    let manager = CLLocationManager()
+    let locationManager = CLLocationManager()
     var location: CLLocation = CLLocation()
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -25,21 +25,25 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        startPointButton.layer.cornerRadius = 6.0
-        mapView.layer.cornerRadius = 6.0
-        
-        manager.delegate = self
-        manager.desiredAccuracy = kCLLocationAccuracyBest
-        
-        self.mapView.showsUserLocation = true
-        self.mapView.mapType = MKMapType(rawValue: 0)!
-        
-        manager.requestWhenInUseAuthorization()
-        manager.startUpdatingLocation()
-        manager.startUpdatingHeading()
-        
-        self.mapView.isZoomEnabled = true
-        self.mapView.userTrackingMode = MKUserTrackingMode(rawValue: 2)!
+        let buttonCornerRadius = 6.0
+        let mapViewCornerRadius = 6.0
+        startPointButton.layer.cornerRadius = CGFloat(buttonCornerRadius)
+        mapView.layer.cornerRadius = CGFloat(mapViewCornerRadius)
+    }
+    
+    func locationManagerConfiguration() {
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+        locationManager.startUpdatingHeading()
+    }
+    
+    func mapViewConfiguration() {
+        mapView.showsUserLocation = true
+        mapView.mapType = .standard
+        mapView.isZoomEnabled = true
+        mapView.userTrackingMode = .followWithHeading
     }
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
